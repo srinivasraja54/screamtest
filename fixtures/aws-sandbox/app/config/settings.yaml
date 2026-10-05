@@ -1,0 +1,4 @@
+service: payments-api
+region: eu-west-1
+dynamodb_table: payments
+# Runtime role is attached by the ECS task definition, not assumed here.

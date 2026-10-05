@@ -1,0 +1,24 @@
+{
+  "rules": [
+    {
+      "name": "annual-audit-export",
+      "schedule": "cron(0 2 1 1 ? *)",
+      "targets": [
+        {
+          "arn": "arn:aws:ecs:eu-west-1:111122223333:task-definition/audit-export",
+          "roleArn": "arn:aws:iam::111122223333:role/annual-audit-export-role"
+        }
+      ]
+    },
+    {
+      "name": "nightly-cache-warm",
+      "schedule": "cron(0 3 * * ? *)",
+      "targets": [
+        {
+          "arn": "arn:aws:lambda:eu-west-1:111122223333:function:cache-warm",
+          "roleArn": "arn:aws:iam::111122223333:role/payments-api-role"
+        }
+      ]
+    }
+  ]
+}
